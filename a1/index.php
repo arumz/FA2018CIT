@@ -60,9 +60,9 @@
 
 		//add new fieldsets with a for loop
 
-			$retval = "<fieldset>";
+			/*$retval = "<fieldset>";
 
-			$retval .= "<legend>" .$aryProductArray = array($x) . "</legend>" .
+				$retval .= "<legend>" .$aryProductArray = array($x) . "</legend>" .
 				"<label for='productname'" .$aryProductArray = array($x) . "</label>" .
 				"<input id='productname'" .$aryProductArray = array($x) ."/>" .
 				"<label for='producetype'" .$aryProductArray = array($x) . "</label>" .
@@ -72,7 +72,7 @@
 				"<label for='productprice'" .$aryProductArray = array($x) . "</label>" .
 				"<input id='productprice'" .$aryProductArray = array($x) ."/>";
 
-			$retval .= "</fieldset>";
+			 $retval .= "</fieldset>";*/
 		}
 	?>
 
