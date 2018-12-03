@@ -97,7 +97,7 @@ a:hover{color:#ffffff;text-decoration:underline;}
 .row-fluid .offset1:first-child{margin-left:8.51063829787234%;*margin-left:8.404255319148938%;}
 [class*="span"].hide,.row-fluid [class*="span"].hide{display:none;}
 [class*="span"].pull-right,.row-fluid [class*="span"].pull-right{float:right;}
-.container{margin-right:auto;margin-left:auto;*zoom:1;}.container:before,.container:after{display:table;content:"";line-height:0;}
+.container{margin-right:auto;margin-left:auto;*zoom:1;},.container:after{display:table;content:"";line-height:0;}
 .container:after{clear:both;}
 .container-fluid{padding-right:20px;padding-left:20px;*zoom:1;}.container-fluid:before,.container-fluid:after{display:table;content:"";line-height:0;}
 .container-fluid:after{clear:both;}
@@ -943,8 +943,26 @@ body #text {
 body #picture {
   width: 40%;
 }
-.comment {
-  padding: 15px;
-  width: 100%;
+.comment-container {
+  padding: 20px;
   height: 100%;
+  width: 100%;
+  margin: 0px;
+  text-align: center;
+}
+.center-wrapper {
+  margin: auto;
+  width: 75%;
+  padding: 20px;
+}
+.comment {
+  position: inherit;
+  padding: 15px;
+  width: 70%;
+  height: 50%;
+  margin: 1px;
+
+}
+.add-comment {
+
 }

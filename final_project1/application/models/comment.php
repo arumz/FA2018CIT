@@ -1,7 +1,8 @@
 <?php
 class Comment extends Model{
 
-	public function loadComments($pID){
+	 public function loadComments($pID){
+		
 
                 $sql = 'SELECT t1.*, t2.first_name, t2.last_name FROM comments t1 LEFT JOIN users t2 ON t1.uID = t2.uID WHERE postID = '.$pID.' ORDER BY t1.date DESC';
                 $results = $this->db->execute($sql, array());
@@ -12,11 +13,11 @@ class Comment extends Model{
                 }
 
                 return $comments;
-        }
+  	}
 
         public function addComment($data)
         {
-                // Generate current datetime
+                // Current date for accurate time stamp
                 $date = date('Y-m-d H:i:s');
 
                 $data = array_merge($data, array('date'=>$date));
