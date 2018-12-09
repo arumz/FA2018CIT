@@ -36,7 +36,6 @@ class Comment extends Model{
         {
                 $sql = 'DELETE FROM comments WHERE postID = ? AND commentID = ?';
                 $result = $this->db->execute($sql, $data);
-                var_dump($result);
                 return;
         }
 }

@@ -28,7 +28,11 @@
                 <?php echo $c['commentText'] ?>
               </p>
               <?php if($isAdmin) { ?>
-              <a class = "btn" id = "btnDelete" name = "btnDelete" href = "<?php echo BASE_URL?>blog/post/<?php echo $pID?>">Delete</a>
+                <form id = 'delete-form' method = 'post' action = "<?php echo BASE_URL ?>blog/post/<?php echo $pID?>">
+                  <input type='hidden' name = 'commentID' value = "<?php echo $c['commentID'] ?>"/>
+            			<input type='hidden' name = 'pID' value = "<?php echo $pID?>"/>
+                  <button type='submit' name = 'btnDelete' id='btnDelete' class='btn'>Delete Comment</button>
+                </form>
               <?php } ?>
 
 
@@ -49,7 +53,6 @@
 			<input type='hidden' name = 'uID' value = "<?php echo $uID ?>"/>
 			<input type='hidden' name = 'pID' value = "<?php echo $pID?>"/>
 			<textarea name = 'commentText' placeholder ='Comment.' ></textarea>
-
 			<button type="submit" name = 'btnSubmit' class="btn form">Submit Comment</button>
 		</form>
 	<?php
