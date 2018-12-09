@@ -17,8 +17,6 @@ class Comment extends Model{
         public function addComment($data)
         {
 
-								var_dump($data);
-
                 $sql = 'INSERT INTO comments (uID,commentText,postID,date) VALUES (?,?,?,?)';
 
                 $this->db->execute($sql, $data);

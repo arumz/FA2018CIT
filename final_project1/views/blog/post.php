@@ -22,6 +22,7 @@
 		 foreach ($comments as $c) {
 		?>
 				<div class = 'comment'>
+              <p hidden><?php echo $c['commentID']?></p>
 				      <p class ='comment-box'>
                 <?php echo $c['commentText'] ?>
               </p>
