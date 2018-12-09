@@ -27,9 +27,9 @@
 				      <p class ='comment-box'>
                 <?php echo $c['commentText'] ?>
               </p>
-
+              <?php if($isAdmin) { ?>
               <a class = "btn" id = "btnDelete" name = "btnDelete" href = "<?php echo BASE_URL?>blog/post/<?php echo $pID?>">Delete</a>
-
+              <?php } ?>
 
 
               </br>
