@@ -4,6 +4,7 @@
  if( is_array($post) ) {
  	extract($post);
   $uID = $u->getUserID();
+  $isAdmin = $u ->isAdmin();
  }
 ?>
 
@@ -26,6 +27,11 @@
 				      <p class ='comment-box'>
                 <?php echo $c['commentText'] ?>
               </p>
+
+              <a class = "btn" id = "btnDelete" name = "btnDelete" href = "<?php echo BASE_URL?>blog/post/<?php echo $pID?>">Delete</a>
+
+
+
               </br>
               <sub class = 'sub-text'>By <?php echo $c['first_name'] . ' '. $c['last_name']. ' on '.$c['date']?></sub>
 				</div>
