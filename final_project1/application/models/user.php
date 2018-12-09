@@ -27,7 +27,10 @@ class User extends Model{
                 $this->user_type = $userInfo['user_type'];
             }
         }
-
+        public function getUserID()
+        {
+              return $this->uID;
+        }
         public function getUserName()
         {
               return $this->first_name.' '.$this->last_name;

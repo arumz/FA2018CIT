@@ -3,6 +3,7 @@
 <?php
  if( is_array($post) ) {
  	extract($post);
+  $uID = $u->getUserID();
  }
 ?>
 
@@ -21,8 +22,11 @@
 		 foreach ($comments as $c) {
 		?>
 				<div class = 'comment'>
-					<sub><?php echo 'Posted on '.date('F j, Y \a\t H:i:s A', strtotime($date)).' by <a href="'.BASE_URL.'members/view/'.$uID.'">'.$first_name.' '.$last_name.'</a>'; ?><br>
-					</sub><br>
+				      <p class ='comment-box'>
+                <?php echo $c['commentText'] ?>
+              </p>
+              </br>
+              <sub class = 'sub-text'>By <?php echo $c['first_name'] . ' '. $c['last_name']. ' on '.$c['date']?></sub>
 				</div>
 			<?php
 			}
@@ -34,13 +38,12 @@
      if(isset($_SESSION['uID']))
      {
   ?>
-		<form id = 'comment-form' method = 'post' action = "<?php echo BASE_URL ?>blog/post/<?php echo $postID?>">
-			<input type='hidden' name = 'commentID' value = "<?php $_POST['commentID']?>"/>
-			<input type='hidden' name = 'uID' value = "<?php $_POST['uID']?>"/>
-			<input type='hidden' name = 'postID' value = "<?php $_POST['postID']?>"/>
-			<textarea name = 'commentText' placeholder ='Comment.' value = "<?php echo $_POST['commentText']?>"></textarea>
+		<form id = 'comment-form' method = 'post' action = "<?php echo BASE_URL ?>blog/post/<?php echo $pID?>">
+			<input type='hidden' name = 'uID' value = "<?php echo $uID ?>"/>
+			<input type='hidden' name = 'pID' value = "<?php echo $pID?>"/>
+			<textarea name = 'commentText' placeholder ='Comment.' ></textarea>
 
-			<button type="submit" class="btn form">Submit Comment</button>
+			<button type="submit" name = 'btnSubmit' class="btn form">Submit Comment</button>
 		</form>
 	<?php
     }

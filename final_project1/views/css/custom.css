@@ -1,0 +1,54 @@
+#sidebar {
+    float: right;
+    width: 200px;
+    padding-top: 25px;
+    top: 0;
+    right:0;
+    height: 100%;
+    z-index: 1;
+    padding-top: 20px;
+    margin-top: -550px;
+}
+body #text {
+  float: left;
+  margin-right: 200px;
+  padding: 0px 10px;
+}
+body #picture {
+  width: 40%;
+}
+.comment-container {
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  text-align: center;
+}
+.center-wrapper {
+  margin: auto;
+  width: 75%;
+  height: 50%;
+  padding: 20px;
+}
+.comment {
+  position: inherit;
+  padding: 2px;
+  width: 70%;
+
+}
+.comment-box {
+  border: 2px;
+  background-color: #fff;
+  position: inherit;
+
+}
+.sub-text{
+  
+}
+.add-comment {
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  margin: 2px;
+  text-align: center;
+}
