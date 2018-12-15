@@ -6,8 +6,8 @@
   </div>
 
   <?php
-	if( is_array($post) ) {
-	 extract($post);
+	if( is_array($posts) ) {
+	 extract($posts);
 	 // $uID = $u->getUserID();
 	 // $isAdmin = $u ->isAdmin();
 	}
@@ -26,12 +26,12 @@
 					<div><?php echo $p['date'] ?> by
 					<a href="<?php echo BASE_URL ?>"><?php echo $p['first_name'].' '.$p['last_name'] ?></a> in
 					<a href="<?php echo BASE_URL ?>category/view/<?php echo $p['categoryID'] ?>"><?php echo $p['name'] ?></a></div>
-					<div style="margin-top:15px;"><a href="<?php echo BASE_URL ?>manageposts/edit/<?php // echo $p['pID'] ;?>" class="btn post-loader">Edit Post</a></div>
+					<div style="margin-top:15px;"><a href="<?php echo BASE_URL ?>managepost/edit/<?php // echo $p['pID'] ;?>" class="btn post-loader">Edit Post</a></div>
 
 			<?php //end php block
 			}?>
 
-<a href="<?php echo BASE_URL; ?>manageposts/add" class="btn btn-primary">Add A Post</a>
+<a href="<?php echo BASE_URL; ?>managepost/add" class="btn btn-primary">Add A Post</a>
 
 
       </div>

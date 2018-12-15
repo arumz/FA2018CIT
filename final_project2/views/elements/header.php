@@ -85,7 +85,7 @@
                            <?php
                                if($u->isAdmin()){?>
                                <li>
-                                   <a href="<?php echo BASE_URL?>manageposts/index">Manage Blog Posts</a>
+                                   <a href="<?php echo BASE_URL?>managepost/index">Manage Blog Posts</a>
                                    <a href="<?php echo BASE_URL?>managecategory/index">Manage Blog Categories</a>
                                </li>
                            <?php }?>

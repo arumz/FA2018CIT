@@ -1,6 +1,6 @@
 <?php
 
-class AddPostController extends Controller{
+class ManagePostController extends Controller{
 
 	public $postObject;
 
@@ -13,15 +13,10 @@ class AddPostController extends Controller{
 	}
 
 	public function add(){
-
-			$this->postObject = new Post();
-
-			$data = array('title'=>$_POST['title'],'content'=>$_POST['content'],'categoryID'=>$_POST['category'],'date'=>$_POST['date'],'uID'=>$_SESSION['uID']);
-
-			$result = $this->postObject->addPost($data);
-
-			$this->set('message', $result);
-
+			//populate drop down menu in the view with all of the categories.
+			$this->postObject = new Category();
+			$categories = $this->postObject->getCategories();
+			$this->set('categories',$categories);
 
 	}
 
@@ -43,9 +38,7 @@ class AddPostController extends Controller{
 
         public function getCategories()
         {
-                        $this->postObject = new Categories();
-                        $categories = $this->postObject->getCategories();
-                        $this->set('categories',$categories);
+
         }
 
         public function update()
@@ -59,6 +52,23 @@ class AddPostController extends Controller{
                         $this->getCategories();
                         $this->set('task','update');
         }
+
+				public function index(){
+					//controller to model
+					$this->postObject = new Post();
+					$posts = $this->postObject->getAllPosts();
+					//controller to view
+					$this->set('posts',$posts);
+
+					//view to controller adding new post
+					if(isset($_POST['btn-add'])) {
+
+						$data = array('title'=>$_POST['title'],'content'=>$_POST['content'],'categoryID'=>$_POST['category'],'date'=>$_POST['date'],'uID'=>$_SESSION['uID']);
+						$result = $this->postObject->addPost($data);
+
+						$this->set('message', $result);
+					}
+				}
 
 
 }

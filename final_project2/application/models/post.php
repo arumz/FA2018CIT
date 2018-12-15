@@ -17,12 +17,7 @@ class Post extends Model{
 
 	}
 
-	public function getAllPosts($limit = 0){
-
-		if($limit > 0){
-
-			$numposts = ' LIMIT '.$limit;
-		}
+	public function getAllPosts(){
 
 		$sql =  "SELECT t1.pID, t1.title, t1.content, t1.date, t1.uID, t1.categoryID,
                          t2.uID, t2.first_name, t2.last_name,
@@ -34,13 +29,13 @@ class Post extends Model{
 		while ($row=$results->fetchrow()) {
 			$posts[] = $row;
 		}
-
+		// var_dump($posts);
 		return $posts;
 
 	}
 
 	public function addPost($data){
-
+			var_dump($data);
 			$sql='INSERT INTO posts (title,content,categoryID,date,uID) VALUES (?,?,?,?,?)';
 			$this->db->execute($sql,$data);
 			$message = 'Post added.';

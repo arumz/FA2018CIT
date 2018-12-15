@@ -18,7 +18,7 @@ class Category extends Model{
                 }
 
                 $categories = $categories2;
-
+                // var_dump($categories);
                 return $categories;
 
         }
