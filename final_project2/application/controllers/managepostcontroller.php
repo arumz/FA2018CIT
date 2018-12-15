@@ -63,7 +63,9 @@ class ManagePostController extends Controller{
 				$this->postObject->addPost($newPostArray);
 
 		// Step 4: Delete the old post the user selected to edit.
-				$this->postObject->deletePost($pID);
+				$m = $this->postObject->deletePost($pID);
+
+				$message = 'post edited.';
 
 		}
 
@@ -73,6 +75,8 @@ class ManagePostController extends Controller{
 
 		// Step 6: Use magic method to allow managepost/index to use $posts
 				$this->set('posts',$posts);
+
+				return $message;
 
 
 	}
