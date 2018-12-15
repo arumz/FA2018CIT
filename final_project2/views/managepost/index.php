@@ -3,6 +3,7 @@
 <div class="container">
 	<div class="page-header">
    <h1>Manage Posts</h1>
+	 <h4>add post button at very bottom.. I know not great UX.</h4>
   </div>
 
 	<?php if($message){?>

@@ -12,6 +12,7 @@
 	<div class="page-header">
 
 <h1><?php echo $title?></h1>
+<h4>add comment at bottom of page.. I know not great UX.</h4>
   </div>
 <p><?php echo $content?></p>
 <sub><?php echo 'Posted on '.$date.' by <a href="'.BASE_URL.'members/view/'.$uID.'"></a>'; ?>

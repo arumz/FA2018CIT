@@ -11,12 +11,12 @@ include('views/elements/header.php');
         }
         ?>
         <tr>
-            <td>First Name: <input name="first_name" type="text" /></td>
-            <td> Last Name: <input name="last_name" type="text" /></td>
+            <td>First Name: <input name="first_name" type="text" required/></td>
+            <td> Last Name: <input name="last_name" type="text" required/></td>
         </tr>
         <tr>
-            <td>     Email: <input name="email" type="text" /></td>
-            <td>  Password: <input name="password" type="password" /></td>
+            <td>     Email: <input name="email" type="text" required/></td>
+            <td>  Password: <input name="password" type="password" required/></td>
         </tr>
         <tr>
             <td colspan="2"><input type="submit" value="Register" /></td>
