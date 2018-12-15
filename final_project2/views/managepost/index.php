@@ -5,18 +5,12 @@
    <h1>Manage Posts</h1>
   </div>
 
-  <?php
-	if( is_array($posts) ) {
-	 extract($posts);
-	 // $uID = $u->getUserID();
-	 // $isAdmin = $u ->isAdmin();
-	}
-	if($message){?>
-    <div class="alert alert-success">
-    <button type="button" class="close" data-dismiss="alert"></button>
-    	<?php echo $message?>
-    </div>
-  <?php }?>
+	<?php if($message){?>
+		<div class="alert alert-success">
+		<button type="button" class="close" data-dismiss="alert"></button>
+			<?php echo $message?>
+		</div>
+	<?php }?>
 
   <div class="row">
       <div class="span8">
@@ -27,6 +21,10 @@
 					<a href="<?php echo BASE_URL ?>"><?php echo $p['first_name'].' '.$p['last_name'] ?></a> in
 					<a href="<?php echo BASE_URL ?>category/view/<?php echo $p['categoryID'] ?>"><?php echo $p['name'] ?></a></div>
 					<div style="margin-top:15px;"><a href="<?php echo BASE_URL ?>managepost/edit/<?php // echo $p['pID'] ;?>" class="btn post-loader">Edit Post</a></div>
+					<form action="<?php echo BASE_URL?>managepost/index" method="post" >
+						<input type = 'hidden' name = 'pID' value = '<?php echo $p['pID']?>'/>
+						<button id="submit" type="submit" name = 'btn-delete' class="btn btn-primary" >Delete Post</button>
+					</form>
 
 			<?php //end php block
 			}?>

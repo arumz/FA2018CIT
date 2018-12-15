@@ -29,13 +29,13 @@ class Post extends Model{
 		while ($row=$results->fetchrow()) {
 			$posts[] = $row;
 		}
-		// var_dump($posts);
+		 // var_dump($posts);
 		return $posts;
 
 	}
 
 	public function addPost($data){
-			var_dump($data);
+			// var_dump($data);
 			$sql='INSERT INTO posts (title,content,categoryID,date,uID) VALUES (?,?,?,?,?)';
 			$this->db->execute($sql,$data);
 			$message = 'Post added.';
@@ -51,6 +51,13 @@ class Post extends Model{
 			$message = 'Post Updated.';
 			return $message;
 	        }
+
+		public function deletePost($data)
+		{
+						$sql = 'DELETE FROM posts WHERE pID = ?';
+						$result = $this->db->execute($sql, $data);
+						return;
+		}
 
 
 

@@ -54,21 +54,49 @@ class ManagePostController extends Controller{
         }
 
 				public function index(){
-					//controller to model
 					$this->postObject = new Post();
-					$posts = $this->postObject->getAllPosts();
-					//controller to view
-					$this->set('posts',$posts);
 
-					//view to controller adding new post
-					if(isset($_POST['btn-add'])) {
+					if (isset($_POST['btn-add'])) {
+						var_dump($_POST);
+						$this->postObject = new Post();
+						$cID = $_POST['taskOption'];
+						var_dump($cID);
+						$title = $_POST['title'];
+						$content = $_POST['content'];
+						$uID = $_POST['uID'];
+						$date = $_POST['date'];
 
-						$data = array('title'=>$_POST['title'],'content'=>$_POST['content'],'categoryID'=>$_POST['category'],'date'=>$_POST['date'],'uID'=>$_SESSION['uID']);
-						$result = $this->postObject->addPost($data);
+						$newPostArray = array($title, $content, $cID, $date, $uID);
+					//	var_dump($newPostArray);
+						$this->postObject->addPost($newPostArray);
 
-						$this->set('message', $result);
-					}
 				}
+					$posts = $this->postObject->getAllPosts();
+
+						$this->set('posts',$posts);
+
+
+				//CODE FOR DELETING POSTS FROM DATABASE
+        if(isset($_POST['btn-delete'])) {
+        //setting variables from view to controller
+				$pID = $_POST['pID'];
+
+       $deleteParameter = $pID;
+       //print_r() var_dump()
+			 // print_r($deleteArray);
+
+       //Deleting comment so Iron Man (model) can delete data into database based on commentID and pID
+      $this->postObject->deletePost($deleteParameter);
+      }
+
+      //FINAL STEP LOAD ALL COMMENTS FROM DATABASE
+			$posts = $this->postObject->getAllPosts();
+
+
+     		// Return array to view so for each loop works
+     		$this->set('posts', $posts);
+			}
+
 
 
 }

@@ -19,22 +19,18 @@
           <input name="date" id="date" size="16" type="date" value="<?php echo $date = date('Y-m-d H:i:s'); ?>">
 
           <label for="category">Category</label>
-          <select class="input-sm" name="category" id="category">
-          <option placeholder="-- Select Category --"></option>
+						<?php //var_dump($results[0]['name']);
+						// var_dump($category);
 
-          <?php
-					// var_dump($categories);
-            foreach($categories as $key => $value){
-              if($category == $key){
-				  echo "<option selected value='".$key."'>".$value."</option>" . "\n";
-              }
-              else {
-				  echo "<option value='".$key."'>".$value."</option>" . "\n";
-              }
 
-			}
-          ?>
+						?>
 
+          <select name = "taskOption" class="input-sm" id="category">
+						<?php foreach($categories as $c){?>
+							<option value="<?php echo $c['categoryID'];?>"><?php echo $c['name'];?></option>
+						<?php }
+						$selectedCategory = $_POST['taskOption'];
+						?>
           </select>
 
           <label>Content</label>
