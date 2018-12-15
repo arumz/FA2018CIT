@@ -1,9 +1,11 @@
 
 <?php include('views/elements/header.php');?>
 <?php
+// I know this code is technically wrong and should be in the controller but I was running out of time.
  if( is_array($post) ) {
  	extract($post);
   $uID = $u->getUserID();
+  $uName = $u->getUserName();
   $isAdmin = $u ->isAdmin();
  }
 ?>
@@ -15,7 +17,7 @@
 <h4>add comment at bottom of page.. I know not great UX.</h4>
   </div>
 <p><?php echo $content?></p>
-<sub><?php echo 'Posted on '.$date.' by <a href="'.BASE_URL.'members/view/'.$uID.'"></a>'; ?>
+<sub><?php echo "Posted on $date by $uName in $name" ; ?>
 </sub>
 <div class = 'comment-container'>
 	<div class = 'center-wrapper'>
