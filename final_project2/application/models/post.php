@@ -43,9 +43,9 @@ class Post extends Model{
 
 		}
 
-		public function editPost($pID,$data){
-
-      $sql = 'UPDATE posts SET title=?, content=?, categoryID=?, date=? WHERE pID = '.$pID;
+		public function updatePost($data){
+			var_dump($data);
+      $sql = 'UPDATE posts SET title=?, content=?, categoryID=?, date=? WHERE pID = '.$data['pID'];
       echo 'The sequel statement is '.$sql."<br><br>";
 			$this->db->execute($sql,$data);
 			$message = 'Post Updated.';
