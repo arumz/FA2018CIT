@@ -91,7 +91,7 @@ class User extends Model{
                        $numusers = ' LIMIT '.$limit;
                }
 
-               $sql = "SELECT first_name, last_name, email, uID FROM users".$numusers;
+               $sql = "SELECT first_name, last_name, email, uID, active FROM users".$numusers;
 
                // perform query
                $results = $this->db->execute($sql);
@@ -155,6 +155,34 @@ class User extends Model{
 
                 return $user;
         }
+
+        public function updateUser($uID,$active) {
+          $active = (int)$active;
+          $active = $active + 1;
+          $active = array($active);
+          var_dump($active);
+
+          $sql = 'UPDATE users SET active=? WHERE uID = '.$uID;
+          echo 'The sequel statement is '.$sql."<br><br>";
+    			$this->db->execute($sql,$active);
+    			$message = 'User Activated.';
+    			return $message;
+        }
+        public function isActive($uID)
+      {
+            $sql = "SELECT active FROM users WHERE uID = ".$uID;
+
+            $result = $this->db->getrow($sql,array());
+
+            if($result[0] == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+      }
 
 }
 
