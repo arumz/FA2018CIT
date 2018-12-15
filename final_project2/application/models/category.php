@@ -22,7 +22,7 @@ class Category extends Model{
                 while ($row=$results->fetchrow()) {
                   $categories[] = $row;
                 }
-                var_dump($categories);
+                // var_dump($categories);
                 return $categories;
 
 

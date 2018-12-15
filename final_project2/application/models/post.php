@@ -56,7 +56,8 @@ class Post extends Model{
 		{
 						$sql = 'DELETE FROM posts WHERE pID = ?';
 						$result = $this->db->execute($sql, $data);
-						return;
+						$message = "Post Deleted";
+						return $message;
 		}
 
 

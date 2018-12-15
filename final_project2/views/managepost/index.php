@@ -20,7 +20,12 @@
 					<div><?php echo $p['date'] ?> by
 					<a href="<?php echo BASE_URL ?>"><?php echo $p['first_name'].' '.$p['last_name'] ?></a> in
 					<a href="<?php echo BASE_URL ?>category/view/<?php echo $p['categoryID'] ?>"><?php echo $p['name'] ?></a></div>
-					<div style="margin-top:15px;"><a href="<?php echo BASE_URL ?>managepost/edit/<?php // echo $p['pID'] ;?>" class="btn post-loader">Edit Post</a></div>
+					<form action="<?php echo BASE_URL?>managepost/edit" method="post" >
+						<input type = 'hidden' name = 'pID' value = '<?php echo $p['pID']?>'/>
+						<input type = 'hidden' name = 'firstTitle' value = '<?php echo $p["title"]?>'/>
+						<input type = 'hidden' name = 'content' value ='<?php echo $p["content"]?>' />
+						<button id="submit" type="submit" name = 'btn-edit' class="btn btn-primary" >Edit Post</button>
+					</form>
 					<form action="<?php echo BASE_URL?>managepost/index" method="post" >
 						<input type = 'hidden' name = 'pID' value = '<?php echo $p['pID']?>'/>
 						<button id="submit" type="submit" name = 'btn-delete' class="btn btn-primary" >Delete Post</button>
