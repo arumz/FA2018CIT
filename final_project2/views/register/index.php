@@ -19,6 +19,7 @@ include('views/elements/header.php');
             <td>  Password: <input name="password" type="password" required/></td>
         </tr>
         <tr>
+            <td> <input name="is-active" type = "hidden" value=0 required /></td>
             <td colspan="2"><input type="submit" value="Register" /></td>
         </tr>
     </table>

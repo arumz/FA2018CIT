@@ -69,7 +69,6 @@
             <ul class="nav">
               <li class="active"><a href="<?php echo BASE_URL?>">Home</a></li>
               <li><a href="<?php echo BASE_URL?>blog/">Blog</a></li>
-              <li><a href="<?php echo BASE_URL?>members/">Members Area</a></li>
               <li><a href="<?php echo BASE_URL?>weather/">Today's Forecast</a></li>
             </ul>
 
@@ -85,6 +84,7 @@
                            <?php
                                if($u->isAdmin()){?>
                                <li>
+                                   <a href="<?php echo BASE_URL?>members/index">Manage Members</a>
                                    <a href="<?php echo BASE_URL?>managepost/index">Manage Blog Posts</a>
                                    <a href="<?php echo BASE_URL?>managecategory/index">Manage Blog Categories</a>
                                </li>
