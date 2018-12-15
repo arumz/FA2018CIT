@@ -5,7 +5,9 @@ class LoginController extends Controller{
    public $userObject;
 
    public function index() {
-     
+     $this->userObject = new User();
+     $result = $this->userObject->isActive();
+
    }
 
    public function do_login()
@@ -15,9 +17,15 @@ class LoginController extends Controller{
        if($this->userObject->checkUser($_POST['email'],$_POST['password']))
        {
 
+
+
            $userInfo = $this->userObject->getUserFromEmail($_POST['email']);
 
            $_SESSION['uID'] = $userInfo['uID'];
+
+           $result = $this->userObject->isActive($SESSION['uID']);
+
+           $this->set('active',$result);
 
            if(strlen($_SESSION['redirect']) > 0)
            {

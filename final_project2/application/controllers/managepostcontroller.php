@@ -15,7 +15,7 @@ class ManagePostController extends Controller{
 	public function add(){
 			//populate drop down menu in the view with all of the categories.
 			$this->postObject = new Category();
-			$categories = $this->postObject->getaegories();
+			$categories = $this->postObject->getCategories();
 			$this->set('categories',$categories);
 
 	}
@@ -75,10 +75,10 @@ class ManagePostController extends Controller{
 					$this->postObject = new Post();
 
 					if (isset($_POST['btn-add'])) {
-						var_dump($_POST);
+						// var_dump($_POST);
 						$this->postObject = new Post();
 						$cID = $_POST['taskOption'];
-						var_dump($cID);
+						// var_dump($cID);
 						$title = $_POST['title'];
 						$content = $_POST['content'];
 						$uID = $_POST['uID'];

@@ -36,7 +36,7 @@
 			<?php //end php block
 			}?>
 
-<a href="<?php echo BASE_URL; ?>managepost/add" class="btn btn-primary">Add A Post</a>
+<a href="<?php echo BASE_URL ?>managepost/add" class="btn btn-primary">Add A Post</a>
 
 
       </div>
