@@ -4,6 +4,14 @@ class ManageCategoryController extends Controller
 {
 
         public function index(){
+
+
+                if(isset($_POST['btn-add'])) {
+                $this->categoryObject = new Category;
+                $message = $this->categoryObject->addCategory($_POST['categoryName']);
+                $this->set('message',$message);
+                }
+
                 $outcome = $this->getCategories();
                 $this->set('outcome',$outcome);
         }

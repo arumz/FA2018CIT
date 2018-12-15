@@ -50,13 +50,13 @@ class Category extends Model{
 	// 	return $message;
 	// }
   //
-	// public function addCategory($category)
-  //       {
-	// 	$sql = "INSERT INTO categories (name) VALUES (?)";
-	// 	$this->db->execute($sql, $category);
-	// 	$message = 'Category has been added.';
-	// 	return $message;
-	// }
+	public function addCategory($category)
+        {
+		$sql = "INSERT INTO categories (name) VALUES (?)";
+		$this->db->execute($sql, $category);
+		$message = 'Category has been added.';
+		return $message;
+	}
 
 
 }

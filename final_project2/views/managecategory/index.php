@@ -22,10 +22,10 @@
       </div>
     </div>
     <br>
-    <form action="<?php echo BASE_URL.'managecategories/add'; ?>" method="POST">
+    <form action="<?php echo BASE_URL.'managecategory/index' ?>" method="POST">
         Add Category Name<br>
         <input type="text" name="categoryName"><br>
-        <button type="submit" class="btn">Add Category</button>
+        <button type="submit" name = 'btn-add' class="btn">Add Category</button>
     </form>
 </div>
 <?php include('views/elements/footer.php');?>
