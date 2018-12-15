@@ -4,21 +4,27 @@
 	<div class="page-header">
   </div>
 
-  <?php if($message){?>
-    <div class="alert alert-success">
-    <button type="button" class="close" data-dismiss="alert">�</button>
-    	<?php echo $message?>
-    </div>
-  <?php }?>
+	<?php if($message){?>
+		<div class="alert alert-success">
+		<button type="button" class="close" data-dismiss="alert"></button>
+			<?php echo $message?>
+		</div>
+	<?php }?>
 
   <div class="row">
       <div class="span8">
          <?php
             foreach($outcome as $category)
             {
-               echo $category['name'].' <a href="'.BASE_URL.'managecategories/edit/'.$category['categoryID'].'">Edit</a><br>';
+				?>
+							<form action="<?php echo BASE_URL?>managecategory/edit" method="post" >
+								<input type = 'hidden' name = 'categoryID' value = '<?php echo $category['categoryID']?>'/>
+								<input name = 'name' value = '<?php echo $category['name']?>'/>
+								<button id="submit" type="submit" name = 'btn-c-edit' class="btn btn-primary" >Edit Category</button>
+							</form>
+						<?php
             }
-         ?>
+         		?>
       </div>
     </div>
     <br>
